@@ -1,0 +1,105 @@
+/*
+   Micropage Thumbnail Kit — shared visual template.
+   Use pages.json for wording and image; edit CSS here for the visual system.
+   Exact output dimensions are supplied by render_thumbnails.R.
+*/
+:root {
+  --ink: #33211e;
+  --white: #fff8f1;
+  --accent: #f9cb8d;
+  --muted: rgba(255,248,241,.82);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html,body { margin:0; padding:0; background:#e5ccb9; }
+body { width:max-content; overflow:hidden; }
+.thumbnail {
+  width:var(--card-width);
+  height:var(--card-height);
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#d38b65;
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  color:var(--white);
+}
+.thumbnail__photo {
+  position:absolute; top:0; right:0; bottom:0; left:0;
+  background-size:cover;
+  background-position:var(--image-position,center);
+  transform:scale(1.007); /* avoid edge seams in screenshots */
+}
+.thumbnail__fade {
+  position:absolute; top:0; right:0; bottom:0; left:0;
+  background:linear-gradient(90deg,
+    rgba(38,29,33,.93) 0%,
+    rgba(51,33,35,.89) 28%,
+    rgba(61,37,37,.65) 43%,
+    rgba(64,41,37,.18) 66%,
+    rgba(43,32,34,0) 83%);
+}
+.thumbnail__texture {
+  position:absolute; top:0; right:0; bottom:0; left:0;
+  opacity:.12;
+  background:radial-gradient(circle at 13% 21%,#ffe3be 0%, transparent 36%),
+             linear-gradient(130deg,transparent 57%,rgba(248,149,87,.2) 90%);
+  pointer-events:none;
+}
+.thumbnail__content {
+  position:relative; z-index:2;
+  height:100%; width:100%;
+  padding:60px 66px 38px;
+  display:flex;flex-direction:column;
+}
+.thumbnail__eyebrow {
+  display:flex;align-items:center;gap:12px;
+  font-weight:750; letter-spacing:.19em; font-size:13px;
+  color:var(--accent); white-space:nowrap;
+}
+.asterisk { font-size:23px;line-height:.5; }
+.thumbnail__headline { margin-top:76px; max-width:670px; }
+h1 { margin:0; font-size:94px; font-weight:800;letter-spacing:-.064em;line-height:.94; }
+h1 span { display:block; }
+h1 .title-second {
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic; font-weight:600;
+  letter-spacing:-.06em; color:var(--accent);
+  padding-left:2px;
+}
+.thumbnail__subtitle {
+  margin:23px 0 0;
+  max-width:530px; font-size:27px; font-weight:600;
+  line-height:1.25;letter-spacing:-.02em;
+}
+.thumbnail__description {
+  max-width:510px;
+  margin:24px 0 0;
+  color:var(--muted);font-size:18px;line-height:1.45;
+}
+.thumbnail__footer {
+  margin-top:auto;
+  display:flex; align-items:end; justify-content:space-between;
+  font-size:11px; font-weight:750; letter-spacing:.16em;
+  color:rgba(255,248,241,.84);
+}
+.footer-mark { font-size:25px;letter-spacing:-.08em;line-height:1;font-weight:800;color:var(--white); }
+.footer-mark span { color:var(--accent); }
+
+/* Skinny 4:1 Confluence banner, same illustration + visual identity. */
+.thumbnail--confluence .thumbnail__content { padding:43px 64px 29px; }
+.thumbnail--confluence .thumbnail__fade {
+  background:linear-gradient(90deg,
+   rgba(38,29,33,.96) 0%,
+   rgba(51,33,35,.92) 30%,
+   rgba(61,37,37,.62) 49%,
+   rgba(64,41,37,.09) 76%,
+   rgba(43,32,34,0) 90%);
+}
+.thumbnail--confluence .thumbnail__headline { margin-top:65px; max-width:1060px; }
+.thumbnail--confluence h1 { font-size:81px; white-space:nowrap;letter-spacing:-.055em;line-height:1; }
+.thumbnail--confluence h1 span {display:inline;}
+.thumbnail--confluence h1 .title-second {margin-left:17px;}
+.thumbnail--confluence .thumbnail__subtitle {font-size:25px;margin-top:17px;}
+.thumbnail--confluence .thumbnail__description {display:none;}
+.thumbnail--confluence .thumbnail__footer {font-size:11px;}
+/* A wide banner crops vertically; bias upward so the monkey's face stays visible. */
+.thumbnail--confluence .thumbnail__photo { background-position:var(--image-position-wide, 61% 10%); }

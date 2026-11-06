@@ -1,0 +1,15 @@
+
+{
+  "find-the-monkey": {
+    "eyebrow": "A LITTLE LESSON IN THINKING BIG",
+    "title_first": "Find the",
+    "title_second": "Monkey.",
+    "subtitle": "Stop building the pedestal first.",
+    "description": "A playful, interactive lesson about tackling the hardest uncertainty before polishing the easy parts.",
+    "footer": "FIND THE UNCERTAINTY / TEST IT FIRST",
+    "image": "assets/curious-monkey.png",
+    "image_position": "61% 48%",
+    "image_alt": "A curious monkey with juggling balls, perched on a pedestal",
+    "image_position_wide": "61% 10%"
+  }
+}

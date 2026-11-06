@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{PAGE_TITLE}} — {{VARIANT_LABEL}}</title>
+  <link rel="stylesheet" href="../thumbnail.css">
+</head>
+<body>
+  <!-- Generated from pages.json. Edit thumbnail.css for design, not this output file. -->
+  <main id="thumbnail" class="thumbnail thumbnail--{{VARIANT}}"
+        style="--card-width:{{WIDTH}}px;--card-height:{{HEIGHT}}px;--image-position:{{IMAGE_POSITION}};--image-position-wide:{{IMAGE_POSITION_WIDE}};">
+    <div class="thumbnail__photo" role="img" aria-label="{{IMAGE_ALT}}"
+         style="background-image:url('../{{IMAGE}}')"></div>
+    <div class="thumbnail__fade" aria-hidden="true"></div>
+    <div class="thumbnail__texture" aria-hidden="true"></div>
+
+    <div class="thumbnail__content">
+      <div class="thumbnail__eyebrow"><span class="asterisk">✳</span>{{EYEBROW}}</div>
+      <div class="thumbnail__headline">
+        <h1><span class="title-first">{{TITLE_FIRST}}</span>
+          <span class="title-second">{{TITLE_SECOND}}</span></h1>
+        <p class="thumbnail__subtitle">{{SUBTITLE}}</p>
+      </div>
+      <p class="thumbnail__description">{{DESCRIPTION}}</p>
+      <div class="thumbnail__footer"><span>{{FOOTER}}</span><span class="footer-mark">DF<span>.</span></span></div>
+    </div>
+  </main>
+</body>
+</html>
